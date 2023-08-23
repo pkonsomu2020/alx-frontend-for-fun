@@ -646,11 +646,9 @@ ul.row {
   content: "";
 }
 
-
 /*** FORM ***/
 /* Comment section
-    ============================= */
-
+    =============================== */
 .post-comments {
   width: 80%;
   margin: 10rem 0 0 auto;
@@ -661,7 +659,8 @@ ul.row {
   font-variant: small-caps;
 }
 
-/* Basic form */
+/* Basic form 
+    ================================ */
 form {
   display: flex;
   flex-direction: column;
@@ -669,22 +668,20 @@ form {
   margin: 0;
 }
 
-/* Fieldsets */
 fieldset {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: none;
-  padding: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0 0 2rem;
 }
 
-/* Labels */
 label {
-  cursor: pointer;
-  display: block;
-  white-space: nowrap;
-  font-size: 1.4rem;
-  padding: 0 0 0.5rem;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
 }
 
 input[type=text], input[type=email], textarea {
