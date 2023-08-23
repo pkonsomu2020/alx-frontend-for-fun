@@ -22,9 +22,9 @@
   --color-white: #ffffff;
   --color-grey: #a0a0a0;
   --color-light-grey: #f3f3f3;
-  --color-dark-grey: #353535;
   --color-red: #cd3e65;
   --color-green: #08805b;
+  --color-dark-grey: #353535;
 
   --text-color: var(--color-black);
   --valid-color: var(--color-green);
@@ -152,6 +152,16 @@ a:active {
   background: var(--button-hover-background);
   transition-duration: var(--transition-duration);
   transition-property: color, background-color;
+}
+
+.button-primary {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.button-primary:hover {
+    color: var(--color-primary);
+    background: var(--color-white);
 }
 
 /* Helpers
@@ -650,11 +660,9 @@ ul.row {
   content: "";
 }
 
-
 /*** FORM ***/
 /* Comment section
-    ============================= */
-
+    =============================== */
 .post-comments {
   width: 80%;
   margin: 10rem 0 0 auto;
@@ -665,7 +673,8 @@ ul.row {
   font-variant: small-caps;
 }
 
-/* Basic form */
+/* Basic form 
+    ================================ */
 form {
   display: flex;
   flex-direction: column;
@@ -673,22 +682,20 @@ form {
   margin: 0;
 }
 
-/* Fieldsets */
 fieldset {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: none;
-  padding: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0 0 2rem;
 }
 
-/* Labels */
 label {
-  cursor: pointer;
-  display: block;
-  white-space: nowrap;
-  font-size: 1.4rem;
-  padding: 0 0 0.5rem;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    padding: 0 0 .5rem;
 }
 
 input[type=text], input[type=email], textarea {
@@ -717,8 +724,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 }
 
 /* Form group
-============================= */
-
+    ============================= */
 .form-group {
     padding: 1rem;
     margin: 0;
