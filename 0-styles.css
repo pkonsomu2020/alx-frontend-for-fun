@@ -1,0 +1,32 @@
+/* Reset default list styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style list items */
+li {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+/* Define sprite background image */
+.icon {
+  display: inline-block;
+  width: 20px; /* Width of a single icon */
+  height: 20px; /* Height of a single icon */
+  background-image: url('0-sprite.png');
+}
+
+/* Position icons using background-position */
+.i-html {
+  background-position: 0 0; /* Position of HTML icon in the sprite */
+}
+
+.i-css {
+  background-position: -20px 0; /* Position of CSS icon in the sprite */
+}
+
+.i-js {
+  background-position: -40px 0; /* Position of JavaScript icon in the sprite */
+}

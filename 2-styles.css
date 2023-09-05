@@ -1,0 +1,58 @@
+/* Hide the default checkbox input */
+.toggle-cb {
+  display: none;
+}
+
+/* Style the toggle container */
+.toggle {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Style the toggle label */
+.toggle-label {
+  display: block;
+  width: 40px; /* Width of the toggle */
+  height: 20px; /* Height of the toggle */
+  background-color: #ccc; /* Background color for the unchecked state */
+  border-radius: 20px; /* Round corners to create a pill shape */
+  position: relative;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Style the inner part of the toggle */
+.toggle-inner {
+  width: 20px; /* Width of the inner part */
+  height: 20px; /* Height of the inner part */
+  background-color: #fff; /* Background color for the inner part */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+}
+
+/* Style the toggle switch */
+.toggle-switch {
+  width: 20px; /* Width of the switch */
+  height: 20px; /* Height of the switch */
+  background-color: #333; /* Background color for the switch */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+}
+
+/* When the checkbox is checked, change the background color of the label and move the inner part and switch to the right */
+.toggle-cb:checked + .toggle-label {
+  background-color: #66bb6a; /* Background color for the checked state */
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner {
+  transform: translateX(20px); /* Move the inner part to the right */
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+  transform: translateX(20px); /* Move the switch to the right */
+}

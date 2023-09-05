@@ -1,0 +1,24 @@
+/* Hide the underline by default */
+h2 a {
+  text-decoration: none;
+  position: relative; /* Create a stacking context */
+}
+
+/* Create a pseudo-element to simulate the underline */
+h2 a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Height of the underline */
+  background-color: #000; /* Color of the underline */
+  transform: scaleX(0); /* Initially, set the width to zero */
+  transform-origin: left; /* Start the transformation from the left */
+  transition: transform 0.3s ease; /* Apply a smooth transition effect */
+}
+
+/* When hovering over the link, reveal the underline */
+h2 a:hover::before {
+  transform: scaleX(1); /* Expand the underline to full width */
+}
