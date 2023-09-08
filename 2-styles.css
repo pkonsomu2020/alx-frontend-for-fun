@@ -46,7 +46,7 @@
 
 /* When the checkbox is checked, change the background color of the label and move the inner part and switch to the right */
 .toggle-cb:checked + .toggle-label {
-  background-color: #66bb6a; /* Background color for the checked state */
+  background-color: #ff0000; /* Background color for the checked state */
 }
 
 .toggle-cb:checked + .toggle-label .toggle-inner {

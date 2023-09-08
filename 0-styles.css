@@ -13,20 +13,20 @@ li {
 /* Define sprite background image */
 .icon {
   display: inline-block;
-  width: 20px; /* Width of a single icon */
-  height: 20px; /* Height of a single icon */
-  background-image: url('0-sprite.png');
+  width: 40px; /* Width of a single icon */
+  height: 40px; /* Height of a single icon */
+  background-image: url('./0-sprite.png');
 }
 
 /* Position icons using background-position */
-.i-html {
-  background-position: 0 0; /* Position of HTML icon in the sprite */
+.icon.i-html {
+  background-position: 0px 0px; 
 }
 
-.i-css {
-  background-position: -20px 0; /* Position of CSS icon in the sprite */
+.icon.i-css {
+  background-position: -40px 0px;
 }
 
-.i-js {
-  background-position: -40px 0; /* Position of JavaScript icon in the sprite */
+.icon.i-js {
+  background-position: -80px 0px; 
 }

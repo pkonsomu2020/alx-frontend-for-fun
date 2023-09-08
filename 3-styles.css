@@ -1,80 +1,98 @@
-/* Reset default styles and remove list bullets */
-body, ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Style the menu container */
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #333;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 115px;
+  padding-top: 30px;
+  transition: height .3s ease;
+}
+.menu-open {
+  display: none;
+}
+
+.menu:has(.menu-open:checked) {
+  height: 460px;
+  transition: height .3s ease;
+}
+
+.menu-open-button {
+  width: 85px;
+  height: 85px;
+  border: 1px solid #a7253d;
+  border-radius: 50%;
+  background-color: #c81938;
+  display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-/* Style the menu items */
-.menu-item {
-  font-size: 24px;
-  color: #fff;
-  text-decoration: none;
-  margin: 20px;
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Style the menu open button */
-.menu-open-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
   cursor: pointer;
-  z-index: 2000;
-  display: block;
+  transition: .3s ease;
 }
 
-/* Style the menu lines for the button */
+.menu-open:not(:checked) + .menu-open-button:hover {
+  transition: .3s ease;
+  transform: scale(1.1);
+}
+
+.menu-open:checked + .menu-open-button {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px;
+}
+
 .menu-line {
-  width: 30px;
-  height: 4px;
-  background-color: #fff;
-  margin: 6px 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 3px;
 }
 
-/* Define the styles for the opened menu */
-#menu-open:checked + .menu {
-  opacity: 1;
-  pointer-events: auto;
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(45deg);
+  height: 2px;
+  width: 23px;
+  position: absolute;
 }
 
-#menu-open:checked + .menu + .menu-open-button .menu-line-1 {
-  transform: translateY(10px) rotate(45deg);
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  transform: rotate(-45deg);
+  height: 2px;
+  width: 23px;
+  position: absolute;
 }
 
-#menu-open:checked + .menu + .menu-open-button .menu-line-2 {
-  opacity: 0;
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  display: none;
+} 
+
+
+.menu-item {
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: #c81938;
+  color: #ffffff;
+  height: 60px;
+  width: 60px;
+  border: 1px solid #a7253d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#menu-open:checked + .menu + .menu-open-button .menu-line-3 {
-  transform: translateY(-10px) rotate(-45deg);
+.menu-item:hover {
+  background-color: #ffffff;
+  color: #c81938;
 }
 
-/* Animate the menu items when the menu is opened */
-#menu-open:checked + .menu .menu-item {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
+.menu-open:not(:checked) ~ .menu-item {
+  display: none;
 }
