@@ -1,0 +1,10 @@
+$list_to_sort: john anna zoe kim felicia carrie;
+$sorted_list: ();
+
+@each $name in $list_to_sort {
+  $sorted_list: append($sorted_list, $name);
+}
+
+$sorted_list: sort($sorted_list);
+
+@debug $sorted_list;
